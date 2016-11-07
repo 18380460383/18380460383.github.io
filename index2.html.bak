@@ -33,8 +33,8 @@
 	<body data-spy="scroll" data-target=".navMenuCollapse">
 		<div id="wrap">
 		<!-- NAVIGATION -->
-	<nav class="navbar bg-color1 dark-bg navbar-fixed-top navbar-slide" style="box-shadow: none;" src="./images/icon.png">
-		<div class="container-fluid"> <a class="navbar-brand goto" href="#intro"><img src="./images/icon.png" height="25" alt="Your logo"></a>
+	<nav class="navbar bg-color1 dark-bg navbar-fixed-top navbar-slide" style="box-shadow: none;" src="./images/mylogo.png">
+		<div class="container-fluid"> <a class="navbar-brand goto" href="#intro"><img src="./images/mylogo.png" height="25" alt="Your logo"></a>
 			<button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 			<div class="collapse navbar-collapse navMenuCollapse">
 				<ul class="nav">
