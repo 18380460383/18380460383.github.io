@@ -1,0 +1,144 @@
+<html>
+
+	<head>
+	<meta charset="UTF-8">
+	<script src="js/jsonformat.js"></script>
+	<script src="js/jsformat.js"></script>
+		<script>
+			function locking() {
+				document.all.ly.style.display = "block";
+				document.all.ly.style.width = document.body.clientWidth;
+				document.all.ly.style.height = document.body.clientHeight;
+				document.all.Layer2.style.display = 'block';
+				document.all.Layer2.style.width = document.body.clientWidth*0.7;
+				document.all.Layer2.style.left=(document.body.clientWidth-document.body.clientWidth*0.7)/2;
+				document.all.Layer2.style.height=document.body.clientHeight*0.5;
+				document.all.Layer2.style.top=(document.body.clientHeight-document.body.clientHeight*0.5)/2;
+			
+			var da='[{"name":"zhangSan", "password":"123"},{"name":"liSi", "password":"321"}]';  
+			 $("#pre").html(new JSONFormat().parse(da));
+			 $('#result').html(syntaxHighlight(JSON.parse(da)));
+			}
+
+			function Lock_CheckForm(theForm) {
+				document.all.ly.style.display = 'none';
+				document.all.Layer2.style.display = 'none';
+				return false;
+			}
+		</script>
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<style>
+    pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+    .string { color: green; }
+    .number { color: darkorange; }
+    .boolean { color: blue; }
+    .null { color: magenta; }
+    .key { color: red; }
+</style>
+		<style type="text/css">
+			<!-- .STYLE1 {
+				font-size: 12px
+			}
+			
+			a:link {
+				color: #FFFFFF;
+				text-decoration: none;
+			}
+			
+			a:visited {
+				text-decoration: none;
+			}
+			
+			a:hover {
+				text-decoration: none;
+			}
+			
+			a:active {
+				text-decoration: none;
+			}
+			
+			-->
+		</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	</head>
+
+	<body>
+		<p align="center">
+			<input type="button" value="弹出DIV" onClick="locking()" />
+		</p>
+          <!--  <pre id="result" ></pre>-->
+		<div id="ly"  style="position: absolute; top: 0px; filter: alpha(opacity=20); background-color: rgb(131,131,131);
+			opacity:0.6;
+         z-index: 2; left: 0px; display: none;">
+		</div>
+		<!--          浮层框架开始         -->
+		
+		<div id="Layer2"  class="moveBar"  align="center" style="position: absolute; z-index: 3;
+         background-color: #FFF; display: none;">
+			<table  border="1" width="100%" height="100%" cellpadding="0" cellspacing="0" style="border: 0 ;background: rgb(237,225,237);
+				opacity:0.4;
+             border-collapse: collapse ;">
+             <tr>
+             	<td align="center" style="background-color: #73A2d6;padding-bottom: 12px;padding-top: 24px;">
+             		<a style="color:red;font-size: 20px;">结果</a>
+             	</td>
+             </tr>
+				<tr>
+					<td style="background-color: #73A2d6; color: #fff; padding-left: 4px; padding-top: 2px;padding-bottom: 10px;padding-top: 10px;
+                     font-weight: bold; font-size: 12px;" height="10" valign="middle">
+						<div style="margin-left: 100px;" align="right">
+							<a href=JavaScript:; class="STYLE1" style="margin-top: 10px;margin-bottom: 10px;" onclick="Lock_CheckForm(this);">[关闭]</a> &nbsp;&nbsp;</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<pre id="result"></pre>
+					</td>
+				</tr>
+				<tr>
+					<td height="130" align="center">
+					</td>
+				</tr>
+				<tr>
+				<td>
+						 <div class="am-modal-bd">
+            <pre id="pre" style="text-align: left;overflow-y: scroll;"></pre>
+        </div>
+					</td>
+				</tr>
+				
+			</table>
+			
+		</div>
+		<!--  浮层框架结束-->
+<!--		<script>
+jQuery(document).ready(
+function () {
+	// 获取窗口宽度
+if (window.innerWidth)
+winWidth = window.innerWidth;
+else if ((document.body) && (document.body.clientWidth))
+winWidth = document.body.clientWidth;
+// 获取窗口高度
+if (window.innerHeight)
+winHeight = window.innerHeight;
+else if ((document.body) && (document.body.clientHeight))
+winHeight = document.body.clientHeight;
+// 通过深入 Document 内部对 body 进行检测，获取窗口大小
+if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth)
+{
+winHeight = document.documentElement.clientHeight;
+winWidth = document.documentElement.clientWidth;
+}
+var obj = $('div.moveBar');
+var wid=$('div.moveBar').offset().left;
+var abs_x = winWidth/2-(obj.width/2)+100;
+var abs_y = winHeight/2 - 150;
+obj.css({'left':abs_x, 'top':abs_y});
+}
+);
+
+</script>-->
+	</body>
+	
+</html>
