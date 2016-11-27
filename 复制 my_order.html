@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<title>我的订单</title>
+		
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<meta charset="UTF-8">
+		    <script>
+  //定义模块
+        var ang = angular.module('module-1',[]);
+        ang.controller('myCon', function ($scope) {
+				$scope.arrs = [
+                {productid:"FI-SW-01",productname:"Koi"},
+                 {productid:"FI-SW-01",productname:"Dalmation"},
+                  {productid:"FI-SW-01",productname:"Rattlesnake"},
+            ];
+});
+</script>
+		<script type="text/javascript">
+			$(window).resize(function() {
+				var width1 = $(document.body).width();
+				//$("#top_user_img").css({'left':width1/2-200});
+				$("#top_title").css({
+					'left': width1 / 2 - 200
+				});
+				/*console.log(width1);
+				if(width1>400){
+					$("body_div").css("width","800px");
+				}else{
+					$("body_div").css("width","100%");
+				}*/
+			});
+			$(document).ready(function() {
+				var width = $(document.body).width();
+				$("#top_title").css({
+					left: width / 2 - 200
+				});
+				//$("#top_user_img").css({left:width/2-200});
+			});
+		</script>
+		<style>
+		
+		
+			button {
+				width: 80px;
+				padding-left: 8px;
+				padding-top: 4px;
+				padding-bottom: 4px;
+				padding-right: 8px;
+				border-radius: 8px;
+			}
+			
+			.button_cancle {
+				background: #eeeeee;
+				color: #000000;
+			}
+			
+			.button_pay {
+				background: red;
+				color: white;
+			}
+			.waitPay{
+				color: #fc8f25;	
+			}
+		</style>
+	</head>
+
+	<body >
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-23
+        	描述：总体布局
+        -->
+		<div class="container">
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：顶部悬浮布局
+            -->
+			<div id="top_title" class="body_div" style="display: flex;height: 50px;position: fixed;padding: 10px;background: white;">
+				<img id="top_back" src="img/icoon_back.png" style="width: 18px;height: 30px;text-align: left;" />
+				<p style="text-align:center;flex: 1;color: red;font-size: 20px;">我的订单</p>
+				<p style="color: red;font-size: 20px;" data-toggle="modal" data-target="#myModal">筛选</p>
+			<!--	<button  id="showmodel" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">筛选</button>-->
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：顶部结束
+            -->
+			<div style="height: 50px;">
+			</div>
+			<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-23
+        	描述：列表总体布局
+        -->
+			<div class="body_div" style="background: #E8E8E8;height: 100%;">
+				<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-23
+        	描述：第一个列表
+        -->
+
+				<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-23
+        	描述：第四个列表结束
+        -->
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：列表集合结束
+            -->
+            
+            
+            	<!-- 模态框（Modal） -->
+<div class="modal fade body_div" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog body_div">
+		<div class="modal-content body_div">
+			<div class="modal-header body_div">
+				<button style="margin-bottom: 10px;" type="button" class="close" data-dismiss="modal" 
+						aria-hidden="true">×
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					筛选
+				</h4>
+				<div>
+					</div>
+			</div>
+			<div>
+				
+			</div>
+			<div class="modal-body body_div">
+				<h4 style="margin-left: 10px;" class="modal-title" id="myModalLabel">
+					订单状态
+				</h4>
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-23
+                	描述：订单状态
+                -->
+				<div style="display: flex;margin-top: 20px;margin-bottom: 10px;">
+					<button style="flex: 1;" type="button" class="btn btn-default" 
+						data-dismiss="modal">全部订单</button>
+					<button style="flex: 1;margin-left: 30px;" type="button" class="btn btn-default" 
+						data-dismiss="modal">待支付</button>
+					<button style="flex: 1;margin-left: 30px;" type="button" class="btn btn-default" 
+						data-dismiss="modal">酒店</button>
+			
+				
+				</div>
+				<div style="display: flex;  margin-bottom: 20px;">
+						<button style="flex: 1;" type="button" class="btn btn-default" 
+						data-dismiss="modal">家用电器</button>
+						<button style="flex: 1;margin-left: 30px;" type="button" class="btn btn-default" 
+						data-dismiss="modal">手机数码</button>
+						<button style="flex: 1;margin-left: 30px;" type="button" class="btn btn-default" 
+						data-dismiss="modal"></button>
+					<!--	<div style="flex: 1;margin-left: 30px;"></div>
+						<div style="flex: 1;margin-left: 30px;">2</div>-->
+				</div>
+				<h4 style="margin-left: 10px;" class="modal-title" id="myModalLabel">
+					订单类型
+				</h4>
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-23
+                	描述：订单类型
+                -->
+				<div style="display: flex;  justify-content: space-between;padding-left: 20px;padding-right: 20px;margin-top: 30px;">
+						<button  type="button" class="btn btn-default" 
+						data-dismiss="modal">全部类型</button>
+						<button type="button" class="btn btn-default" 
+						data-dismiss="modal">酒店</button>
+						<button type="button" class="btn btn-default" 
+						data-dismiss="modal">美食</button>
+				</div>
+				<div style="display: flex;  justify-content: space-between;padding-left: 20px;padding-right: 20px;margin-top: 30px;">
+						<button  type="button" class="btn btn-default" 
+						data-dismiss="modal">打车</button>
+						<button type="button" class="btn btn-default" 
+						data-dismiss="modal">买票</button>
+						<button type="button" class="btn btn-default" 
+						data-dismiss="modal">生活缴费</button>
+				</div>
+			</div>
+			<div class="modal-footer body_div" style="text-align: center;padding-bottom: 20px;padding-top: 30px;">
+				<!--<button type="button" class="btn btn-default" 
+						data-dismiss="modal">关闭
+				</button>-->
+				<button type="button" class="btn btn-primary" style="height:42px;width: 50%; background: red;color: white;border: 0;"data-dismiss="modal">
+					确定
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+		</div>
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function  () {
+							//模态框居中的控制
+	function centerModals(){
+		$('.modal').each(function(i){
+			var $clone = $(this).clone().css('display', 'block').appendTo('body');    
+			var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+			top = top > 0 ? top : 0;
+			$clone.remove();
+			$(this).find('.modal-content').css("margin-top", top-30);
+		});
+	}
+	$('.modal').on('show.bs.modal', centerModals);		//当模态框出现的时候
+	$(window).on('resize', centerModals);				//当窗口大小变化的时候
+		
+			});
+		$("#top_back").click(function  () {
+			window.history.go(-1);
+		});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<script src="js/angular.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<meta charset="UTF-8">
+		<title>我的梦币</title>
+		<script type="text/javascript" src="js/jquery.top_lay.js"></script>
+		<link rel="stylesheet" href="css/tabs/tabs-underlined.css" />
+		
+		<script>
+			//定义模块
+			var ang = angular.module('module-1', []);
+			ang.controller('myCon', function($scope) {
+				$scope.arrs = [{
+					productid: "FI-SW-01",
+					productname: "Koi",
+					status: "待支付",
+					message: "手机号18080460000",
+					price: "100.00",
+					count: "2",
+					custonprice:"+48"
+				}, {
+					productid: "FI-SW-01",
+					productname: "Dalmation",
+					status: "待完成",
+					message: "手机号18080460000",
+					price: "100.00",
+					count: "3",
+					custonprice:"+48"
+					
+				}, {
+					productid: "FI-SW-01",
+					productname: "Rattlesnake",
+					status: "待支付",
+					message: "手机号18080460000",
+					price: "100.00",
+					count: "13",
+					custonprice:"+4"
+				}, {
+					productid: "FI-SW-01",
+					productname: "Koi",
+					status: "已完成",
+					message: "手机号18080460000",
+					price: "100.00",
+					count: "5",
+					custonprice:"+1"
+				}, {
+					productid: "FI-SW-01",
+					productname: "Dalmation",
+					status: "待完成",
+					message: "手机号18080460000",
+					price: "100.00",
+					count: "6",
+					custonprice:"+418"
+				}, {
+					productid: "FI-SW-01",
+					productname: "Rattlesnake",
+					status: "待支付",
+					message: "手机号18080460000",
+					price: "100.00",
+					count: "1",
+					custonprice:"+248"
+				}, {
+					productid: "FI-SW-01",
+					productname: "Dalmation",
+					status: "待完成",
+					message: "手机号18080460000",
+					price: "100.00",
+					count: "9",
+					custonprice:"+14"
+				}, {
+					productid: "FI-SW-01",
+					productname: "Rattlesnake",
+					status: "待支付",
+					message: "手机号18080460000",
+					price: "100.00",
+					count: "5",
+					custonprice:"+28"
+				}, ];
+			});
+		</script>
+		<style>
+		.messagep{
+			height: 18px;
+			font-size: 16px;
+			overflow: hidden; 
+			text-overflow:ellipsis
+		}
+		</style>
+	</head>
+
+	<body ng-app="module-1">
+		<div class="container">
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：顶部悬浮布局
+            -->
+			<div id="top_title" class="body_div" style="display: flex;height: 50px;position: fixed;padding: 10px;background: white;z-index:999">
+				<img id="top_back" src="img/icoon_back.png" style="width: 18px;height: 30px;margin: auto;margin-left: px;" />
+				<p style="text-align:center;flex: 1;color: red;font-size: 20px;">消息中心</p>
+				<p style="margin:auto;text-align:right;color: red;font-size: 20px;margin-right: 0px;display: none;" data-toggle="modal" data-target="#myModal">筛选</p>
+				<!--	<button  id="showmodel" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">筛选</button>-->
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：顶部结束
+            -->
+			<div class="body_div" style="height: 50px;"></div>
+			<div class="body_div" style="height: 1px;background: #EEEEEE;"></div>
+			<div class="body_div" style="margin-top: 30px;text-align: center;">
+				<img src="img/icon_mengbi_1.png" style="height: 100px;" />
+				<p style="font-size: 24px;margin-top: 10px;">2468</p>
+			</div>
+
+			<div class="tabs-underline body_div">
+
+				<ul class="body_div" style="display: flex;">
+					<li style="flex: 1;text-align: center;">
+						<a class="tab-active" data-index="0" href="#">获取明细</a>
+					</li>
+					<li style="flex: 1;text-align: center;">
+						<a data-index="1" href="#">消费明细</a>
+					</li>
+				</ul>
+
+				<div class="tabs-content-placeholder body_div">
+
+					<div class="tab-content-active body_div" style="margin: auto;" ng-controller="myCon">
+						<table class=" body_div" style="">
+							<tr ng-repeat=" ar in arrs" style="padding: 8px;padding-left: 8px;">
+								<!--   -->
+								<td style="padding-bottom: 8px;padding-top: 8px;padding-right: 8px;">
+									<div class="body_div" style="display: flex; height: 50px;">
+										<img src="img/daoshi.jpg" style="height: 50px;width: auto;" />
+										<p class="red_point" style="color: white;text-align: center;">{{ar.count}}</p>
+										<!--<div style="flex: 1;background: red;width: 100px;">
+											<p>{{ar.productname}}</p>
+											<p>{{ar.message}}</p>
+										</div>-->
+										<p style="margin-left: 8px;">{{ar.productname}}<span><br>2016-11-25:21:17</span></p>
+										<!--<button style="padding-top: 2px;padding-bottom: 2px;padding-left: 8px;padding-right: 8px;border-color: #f23023;border-width: 1px;background: red;border-radius: 5px;color: white;height: 28px;">关注</button>-->
+										<p style="flex: 1; text-align: right;color: red;">{{ar.custonprice}}</p>
+
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class=" body_div">
+						<table class=" body_div" style="" ng-controller="myCon">
+							<tr ng-repeat=" ar in arrs" style="padding: 8px;padding-left: 8px;">
+								<!--   -->
+								<td style="padding-bottom: 8px;padding-top: 8px;padding-right: 8px;">
+									<div class="body_div" style="display: flex; height: 50px;">
+										<img src="img/daoshi.jpg" style="height: 50px;width: auto;" />
+										<p class="red_point" style="color: white;text-align: center;">{{ar.count}}</p>
+										<!--<div style="flex: 1;background: red;width: 100px;">
+											<p>{{ar.productname}}</p>
+											<p>{{ar.message}}</p>
+										</div>-->
+										<p style="margin-left: 8px;">{{ar.productname}}<span><br>2016-11-25:21:21</span></p>
+										<!--<button style="padding-top: 2px;padding-bottom: 2px;padding-left: 8px;padding-right: 8px;border-color: #f23023;border-width: 1px;background: red;border-radius: 5px;color: white;height: 28px;">关注</button>-->
+										<p style="flex: 1; text-align: right;color: red;">{{ar.custonprice}}</p>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+
+				var widget = $('.tabs-underline');
+
+				var tabs = widget.find('ul a'),
+					content = widget.find('.tabs-content-placeholder > div');
+
+				tabs.on('click', function(e) {
+					e.preventDefault();
+					// Get the data-index attribute, and show the matching content div
+					var index = $(this).data('index');
+
+					tabs.removeClass('tab-active');
+					content.removeClass('tab-content-active');
+
+					$(this).addClass('tab-active');
+					content.eq(index).addClass('tab-content-active');
+
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			$("#top_back").click(function  () {
+				window.history.go(-1);
+			});
+		</script>
+	</body>
+
+</html>

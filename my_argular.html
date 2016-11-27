@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+			<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+<title>Angular JS Controller</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.js"></script>
+    <link rel="stylesheet" href="css/mystyle.css" />
+    		<style>
+			button {
+				width: 80px;
+				padding-left: 8px;
+				padding-top: 4px;
+				padding-bottom: 4px;
+				padding-right: 8px;
+				border-radius: 8px;
+			}
+			
+			.button_cancle {
+				background: #eeeeee;
+				color: #000000;
+			}
+			
+			.button_pay {
+				background: red;
+				color: white;
+			}
+			.waitPay{
+				color: #fc8f25;	
+			}
+		</style>
+    <script>
+  //定义模块
+        var ang = angular.module('module-1',[]);
+        ang.controller('myCon', function ($scope) {
+				$scope.arrs = [
+                {productid:"FI-SW-01",productname:"Koi"},
+                 {productid:"FI-SW-01",productname:"Dalmation"},
+                  {productid:"FI-SW-01",productname:"Rattlesnake"},
+            ];
+});
+</script>
+</head>
+<body ng-app="module-1">
+<!--<h2>AngularJS Sample Application</h2>-->
+<!--<div ng-app="" ng-controller="studentController">
+
+<!--Enter first name: <input type="text" ng-model="student.firstName"><br><br>
+Enter last name: <input type="text" ng-model="student.lastName"><br>
+<br>
+You are entering: {{student.fullName()}}</div>-->
+
+ <div ng-controller="myCon">
+            <div class="row body_div">
+                <div class="col-md-8 col-md-offset-2 body_div">
+                    <table class="table body_div">
+                        <tr ng-repeat=" ar in arrs">
+                      <!--   -->
+				  		<td > 
+				  			 <div class="body_div" style="padding: 4px;background: white;">
+							<div style="display: flex;padding: 4px;background: white;">
+						<img src="img/dingdan_dd.png" style="width: 16px;height: 16px;text-align: center;" />
+						<p style="flex: 1;margin-left: 10px;">{{ar.productname}}</p>
+							<p class="waitPay">待支付</p>
+								</div>
+								<div style="width: 100%;height: 1px;background: #EEEEEE;"></div>
+							<div style="padding: 4px;">
+						<p style="margin-left: 10px;">手机号18080808080</p>
+							</div>
+							<div style="width: 100%;height: 1px;background: #EEEEEE;"></div>
+							<div style="padding: 4px;text-align: right;">
+						<p style="flex: 1;margin-left: 10px;">合计：<span style="color: red;">￥10.00</span></p>
+							</div>
+							<div style="width: 100%;height: 1px;background: #EEEEEE;"></div>
+							<div style="padding: 4px;text-align: right;">
+							<button type="button" class="btn btn-primary" style="background:#EEEEEE ;color: black;border: 0;">取消订单</button>
+							<button type="button" class="btn btn-primary" style="background:red ;color: white;border: 0;">去支付</button>
+					</div>
+				</div>
+				  		
+				  		</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+   </div>         
+
+</body>
+</html>

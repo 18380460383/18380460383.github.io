@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<title>余额</title>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<link rel="stylesheet" href="css/switch.css" />
+		<link rel="stylesheet" href="css/switch_animator.css" />
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div class="body_div" style="background: #EEEEEE;height: 100%;">
+			<div class="top_title body_div" style="display: flex;">
+				<img id="top_back" class="top_back" src="img/icoon_back.png" />
+				<p class="top_title_message" style="flex: 1;">我的余额</p>
+				<p style="color: red;text-align: center;font-size: 18px;margin: auto;">余额明细</p>
+			</div>
+			<div style="height: 50px;"></div>
+			<div style="width: 100%;height: 1px;background: #EEEEEE;"></div>
+			<div class="body_div" style="text-align: center;background: white;padding-top: 30px;">
+				<img src="img/icon_yue_da.9.png" style="height: 100px;"/>
+				<p style="color: #000000;margin-top: 15px;font-size: 18px;">￥0.0</p>
+				<button type="button" class="btn btn-default" style="width: 90%;margin-top: 30px;">提现</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			
+			$("#top_back").click(function  () {
+				window.history.go(-1);
+			});
+		</script>
+	</body>
+</html>

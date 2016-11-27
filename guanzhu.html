@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<title>发现</title>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/loadinganimator.css" />
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<script type="text/javascript" src="js/angular.js" ></script>
+		<script language="javascript">  
+  
+    function startRequest() {  
+        $("#time").text((new Date()).toLocaleDateString() + " " + (new Date()).toLocaleTimeString());   
+    }  
+  
+    $(function() {  
+        startRequest();  
+        setInterval("startRequest()", 1000);  
+    });  
+  
+  
+</script>  
+	<style>
+		.messagep{
+			height: 18px;
+			font-size: 16px;
+			overflow: hidden; 
+			text-overflow:ellipsis
+		}
+	/**
+	 * 树立效果
+	 */
+		/*.element{ 
+position:fixed; 
+margin:0 auto; 
+left:auto; 
+right:auto; 
+bottom: 0;
+} */
+	</style>
+		    <script>
+  //定义模块
+        var ang = angular.module('module-1',[]);
+        ang.controller('myCon', function ($scope) {
+				$scope.arrs = [
+                {productid:"FI-SW-01",productname:"Koi",status:"待支付",message:"手机号18080460000",price:"100.00",count:"2"},
+                 {productid:"FI-SW-01",productname:"Dalmation",status:"待完成",message:"手机号18080460000",price:"100.00",count:"3"},
+                  {productid:"FI-SW-01",productname:"Rattlesnake",status:"待支付",message:"手机号18080460000",price:"100.00",count:"13"},
+                    {productid:"FI-SW-01",productname:"Koi",status:"已完成",message:"手机号18080460000",price:"100.00",count:"5"},
+                 {productid:"FI-SW-01",productname:"Dalmation",status:"待完成",message:"手机号18080460000",price:"100.00",count:"6"},
+                  {productid:"FI-SW-01",productname:"Rattlesnake",status:"待支付",message:"手机号18080460000",price:"100.00",count:"1"},
+                   {productid:"FI-SW-01",productname:"Dalmation",status:"待完成",message:"手机号18080460000",price:"100.00",count:"9"},
+                  {productid:"FI-SW-01",productname:"Rattlesnake",status:"待支付",message:"手机号18080460000",price:"100.00",count:"5"},
+            ];
+});
+</script>
+	</head>
+	<body ng-app="module-1" >
+		<div class="container" style="padding-bottom: 70px;">
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：底部布局
+            -->
+            		<div id="bottom_div" class="body_div" style="height: 60px;background: white;position: fixed; bottom:0;margin: auto;display: flex;text-align: center;z-index: 999;"> 
+			<div id="bottom_zhuye" class="mid" style="flex: 1; ">
+				<img id="bottom_img_zhuye" src="img/zhuye_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">首页</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_guanzhu" class="mid" style="flex: 1; ">
+				<img src="img/guanzhuz_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">关注</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_faxian" class="mid" style="flex: 1; ">
+				<img src="img/faxian_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">发现</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_liwu" class="mid" style="flex: 1; ">
+				<img src="img/liwu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">购物车</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_wode" class="mid" style="flex: 1;">
+				<img src="img/wode_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">我的</p>
+			</div>
+		</div>		
+
+			<!--底部布局结束-->
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：顶部布局
+                -->	
+                
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：顶部布局
+                -->	
+                
+			<div id="top_lay" class="body_div" style="position: fixed;display: flex;height: 50px;background: white;margin: auto;text-align: center;z-index: 999;">
+				<p style="text-align: center;margin: auto;color: red;font-size: 18px;">关注</p>
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：顶部布局结束
+            -->
+			<div class="body_div" style="height: 50px;"></div>
+			<div class="body_div" style="height: 1px;background: #EEEEEE;"></div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：顶部关注
+            -->
+			<div class="body_div" style="height: 80px;display: flex;padding: 10px;">
+				<img src="img/guanfang_icon.9.png" style="width: 60px;height: auto;"/>
+				<div style="width: 100%;margin-left: 10px;">
+				<div style="display: flex;" >
+					<p class="messagep" style="flex: 1;">住梦生活</p>
+				<p id="time" class="messagep" style="flex: 3; text-align: right;">2016-10-24 21:04:38</p>
+				</div>
+				<p style="color: #999999;margin-top: 10px;">欢迎关注</p>
+				</div>
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：顶部关注结束
+            -->
+			<div class="body_div" style="height: 50px; background: #EEEEEE;display: flex;">
+			<p style="align-self: flex-end;margin-left: 8px;">可能感兴趣的商家</p>
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：商家列表
+            -->	
+			<div class="body_div" style="margin: auto;">
+				<div ng-controller="myCon" class="body_div" >
+					<div class=" body_div">
+						<div class=" body_div">
+							<table class=" body_div" style="">
+								<tr ng-repeat=" ar in arrs" style="padding: 8px;padding-left: 8px;">
+									<!--   -->
+									<td style="padding-bottom: 8px;padding-top: 8px;padding-right: 8px;">
+										<div class="body_div" style="display: flex; height: 50px;">
+											<img src="img/daoshi.jpg" style="height: 50px;width: auto;"/>
+											<p class="red_point">{{ar.count}}</p>
+											<p style="flex: 1;">{{ar.productname}}</p>
+											<button style="padding-top: 2px;padding-bottom: 2px;padding-left: 8px;padding-right: 8px;border-color: #f23023;border-width: 1px;background: red;border-radius: 5px;color: white;height: 28px;">关注</button>
+										</div>
+											<div style="width: 100%;height: 1px;background: #EEEEEE;margin: 2px;"></div>
+									</td>
+								
+								</tr>
+								
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+ 
+		</div>
+		<script>
+			$(document).ready(function() {
+			var width = $(document.body).width();
+				if(width>=430){
+					$("#bottom_div").css({
+					left: width / 2 - 200
+				});
+				$("#top_lay").css({
+					left: width / 2 - 200
+				});
+				}
+				else{
+					$("#bottom_div").css({
+					left: width / 2-(width/2)
+				});
+				$("#top_lay").css({
+					left: width / 2-(width/2)
+				});
+				}
+			});
+			$(window).resize(function() {
+				var width1 = $(document.body).width();
+				if(width1>=430){
+					$("#bottom_div").css({
+					'left': width1 / 2 - 200
+				});
+				$("#top_lay").css({
+					'left': width1 / 2 - 200
+				});
+				}else{
+					$("#bottom_div").css({
+					'left': width1 / 2 - (width1/2)
+				});
+				$("#top_lay").css({
+					'left': width1 / 2 - (width1/2)
+				});
+				}
+			});
+	  $("#bottom_wode").click(function  () {
+	    	window.location.href="phone_me.html";
+	    });
+	    $("#bottom_zhuye").click(function  () {
+			window.location.href="index.html";
+		});
+		$("#bottom_liwu").click(function () {
+			window.location.href="car.html";
+		});
+		$("#bottom_faxian").click(function  () {
+			window.location.href="find.html";
+		});
+		</script>
+	</body>
+</html>

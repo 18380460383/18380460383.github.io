@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<script src="js/angular.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<meta charset="UTF-8">
+		<title>消息中心</title>
+
+		<script type="text/javascript">
+			$(window).resize(function() {
+				var width1 = $(document.body).width();
+				if(width1 >= 430) {
+					$("#top_title").css({
+						'left': width1 / 2 - 200
+					});
+				} else {
+					$("#top_title").css({
+						'left': width1 / 2 - (width1 / 2)
+					});
+				}
+			});
+			$(document).ready(function() {
+				var width = $(document.body).width();
+				if(width >= 430) {
+					$("#top_title").css({
+						left: width / 2 - 200
+					});
+				} else {
+					$("#top_title").css({
+						left: width / 2 - (width / 2)
+					});
+				}
+			});
+		</script>
+		<style>
+			button {
+				width: 80px;
+				padding-left: 8px;
+				padding-top: 4px;
+				padding-bottom: 4px;
+				padding-right: 8px;
+				border-radius: 8px;
+			}
+			
+			.button_cancle {
+				background: #eeeeee;
+				color: #000000;
+			}
+			
+			.button_pay {
+				background: red;
+				color: white;
+			}
+			
+			.waitPay {
+				color: #fc8f25;
+			}
+		</style>
+<script>
+  //定义模块
+        var ang = angular.module('module-1',[]);
+        ang.controller('myCon', function ($scope) {
+				$scope.arrs = [
+                {productid:"FI-SW-01",productname:"Koi",status:"待支付",message:"手机号18080460000",price:"100.00",count:"2",message:"消息1"},
+                 {productid:"FI-SW-01",productname:"Dalmation",status:"待完成",message:"手机号18080460000",price:"100.00",count:"3",message:"消息2"},
+                  {productid:"FI-SW-01",productname:"Rattlesnake",status:"待支付",message:"手机号18080460000",price:"100.00",count:"13",message:"消息3"},
+                    {productid:"FI-SW-01",productname:"Koi",status:"已完成",message:"手机号18080460000",price:"100.00",count:"5",message:"消息4"},
+                 {productid:"FI-SW-01",productname:"Dalmation",status:"待完成",message:"手机号18080460000",price:"100.00",count:"6",message:"消息5"},
+                  {productid:"FI-SW-01",productname:"Rattlesnake",status:"待支付",message:"手机号18080460000",price:"100.00",count:"1",message:"消息6"},
+                   {productid:"FI-SW-01",productname:"Dalmation",status:"待完成",message:"手机号18080460000",price:"100.00",count:"9",message:"消息7"},
+                  {productid:"FI-SW-01",productname:"Rattlesnake",status:"待支付",message:"手机号18080460000",price:"100.00",count:"5",message:"消息8"},
+            ];
+});
+</script>
+	</head>
+
+	<body ng-app="module-1">
+		<div class="container">
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：顶部悬浮布局
+            -->
+			<div id="top_title" class="body_div" style="display: flex;height: 50px;position: fixed;padding: 10px;background: white;z-index:999">
+				<img id="top_back" src="img/icoon_back.png" style="width: 18px;height: 30px;margin: auto;margin-left: px;" />
+				<p style="text-align:center;flex: 1;color: red;font-size: 20px;">消息中心</p>
+				<p style="margin:auto;text-align:right;color: red;font-size: 20px;margin-right: 0px;display: none;" data-toggle="modal" data-target="#myModal">筛选</p>
+				<!--	<button  id="showmodel" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">筛选</button>-->
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：顶部结束
+            -->
+			<div style="height: 50px;"></div>
+			<div class="body_div" style="height: 1px;background: #EEEEEE;"></div>
+			<div class="body_div" style="margin: auto;">
+				<div ng-controller="myCon" class="body_div" >
+					<div class=" body_div">
+						<div class=" body_div">
+							<table class=" body_div" style="">
+								<tr ng-repeat=" ar in arrs" style="padding: 8px;padding-left: 8px;">
+									<!--   -->
+									<td style="padding-bottom: 8px;padding-top: 8px;padding-right: 8px;">
+										<div class="body_div" style="display: flex; height: 50px;">
+											<img src="img/daoshi.jpg" style="height: 50px;width: auto;"/>
+											<p class="red_point">{{ar.count}}</p>
+											<div style="flex: 1;">
+												<p >{{ar.productname}}</p>
+												<p>{{ar.message}}</p>
+											</div>
+											
+											<!--<button style="padding-top: 2px;padding-bottom: 2px;padding-left: 8px;padding-right: 8px;border-color: #f23023;border-width: 1px;background: red;border-radius: 5px;color: white;height: 28px;">关注</button>-->
+											<p>2016-11-25 20:34</p>
+										</div>
+										
+										<div style="width: 100%;height: 1px;background: #EEEEEE;margin: 2px;"></div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#top_back").click(function  () {
+				window.history.go(-1);
+			});
+		</script>
+	</body>
+</html>

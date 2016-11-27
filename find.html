@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<title>发现</title>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/loadinganimator.css" />
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/mystyle.css" />
+	</head>
+	<body>
+		<div class="container" style="padding-bottom: 70px;">
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：底部布局
+            -->
+					<div id="bottom_div" class="body_div" style="height: 60px;background: white;position: fixed; bottom:0;margin: auto;display: flex;text-align: center;"> 
+			<div id="bottom_zhuye" class="mid" style="flex: 1; ">
+				<img id="bottom_img_zhuye" src="img/zhuye_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">首页</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_guanzhu" class="mid" style="flex: 1; ">
+				<img src="img/guanzhu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">关注</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_faxian" class="mid" style="flex: 1; ">
+				<img src="img/faxianz_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">发现</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_liwu" class="mid" style="flex: 1; ">
+				<img src="img/liwu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">购物车</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_wode" class="mid" style="flex: 1;">
+				<img src="img/wode_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">我的</p>
+			</div>
+		</div>	
+			<!--底部布局结束-->
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：顶部布局
+                -->	
+                
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：顶部布局
+                -->	
+                
+			<div id="top_lay" class="body_div" style="position: fixed;display: flex;height: 50px;background: white;margin: auto;text-align: center;z-index: 999;">
+				<p style="text-align: center;margin: auto;color: red;font-size: 18px;">发现</p>
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：顶部布局结束
+            -->
+			<div class="body_div" style="height: 50px;"></div>
+			<div class="body_div" style="height: 1px;background: #EEEEEE;"></div>
+			<div class="body_div" style="margin-top: 100px;text-align: center;">
+				<img src="img/cart_empty.png" style="height: 100px;width: 100px;" />
+				<p style="margin-top: 20px;">您的购物车空空如也</p>
+				<p class="small" style="color: #999999;">快去挑选自己喜欢的宝贝吧！</p>
+				<button style="padding-top :4px;padding-bottom: 4px;color: red;font-size: 16px; border-style: solid;border-color: red;width: 150px;background: white;border-radius: 5px;margin-top: 30px;">去逛逛</button>
+			</div>
+			<div class="body_div" style="height: 1000px;"></div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				var width = $(document.body).width();
+				if(width>=450){
+					$("#bottom_div").css({
+					left: width / 2 - 200
+				});
+				$("#top_lay").css({
+					left: width / 2 - 200
+				});
+				}
+				else{
+					$("#bottom_div").css({
+					left: width / 2-(width/2)
+				});
+				$("#top_lay").css({
+					left: width / 2-(width/2)
+				});
+				}
+			});
+			$(window).resize(function() {
+				var width1 = $(document.body).width();
+				if(width1>=430){
+					$("#bottom_div").css({
+					'left': width1 / 2 - 200
+				});
+				$("#top_lay").css({
+					'left': width1 / 2 - 200
+				});
+				}else{
+					$("#bottom_div").css({
+					'left': width1 / 2 - (width1/2)
+				});
+				$("#top_lay").css({
+					'left': width1 / 2 - (width1/2)
+				});
+				}
+			});
+	  $("#bottom_wode").click(function  () {
+	    	window.location.href="phone_me.html";
+	    });
+	    $("#bottom_zhuye").click(function  () {
+			window.location.href="index.html";
+		});
+		$("#bottom_guanzhu").click(function () {
+			window.location.href="guanzhu.html";
+		});
+		$("#bottom_liwu").click(function  () {
+			window.location.href="car.html";
+		});
+		</script>
+	</body>
+</html>

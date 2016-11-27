@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<title>我的钱包</title>
+
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<meta charset="UTF-8">
+		<style>
+			.acount{
+				  background: -webkit-linear-gradient(left,#FE6753, #FF7D2F); /* Safari 5.1 - 6.0 */
+   				 background: -o-linear-gradient((left,#FE6753, #FF7D2F); /* Opera 11.1 - 12.0 */
+    			background: -moz-linear-gradient((left,#FE6753, #FF7D2F); /* Firefox 3.6 - 15 */
+    			background: linear-gradient((left,#FE6753, #FF7D2F); /* 标准的语法（必须放在最后） */
+			}
+		</style>
+	</head>
+		<div class="body_div" >
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：顶部悬浮区域
+            -->
+			<div  class="body_div"  style="display:flex;position: fixed;height: 50px;background: white;text-align: center;">
+				<img id="top_back" src="img/icoon_back.png" style="margin: auto;width: 22px;height: 32px;margin-left: 8px;" />
+				<p style="margin: auto;color: red;font-size: 22px;">我的钱包</p>
+				<p style="margin: auto;"></p>
+			</div>
+			<div style="height: 50px;"></div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：内容区域
+            -->
+			<div class="body_div acount" style=" height: 150px;">
+					<p style="color: white;margin-left: 18px;padding-top:18px;font-size: 18px;">账户总额（元）</p>
+					<div style="display: flex;margin-top: 50px;">
+						<p style="flex:1;color: white;margin-left: 18px;padding-top:8px;font-size: 26px;">0</p>
+						<p style="color: white;margin-left: 18px;padding-top:8px;font-size: 20px;margin-right: 10px;">可提现0.00</p>
+					</div>
+				</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：第一行
+            -->
+			<div class="body_div" style="display: flex;height: 100%;">
+				<div style="flex: 1;text-align: center;padding-top: 20px;padding-bottom: 20px;padding-left: 10px;padding-right: 10px;">
+					<div style="display: flex;height: 50px;">
+						<img src="img/icon_yue2.png"  style="width: 32px;height: 32px;margin: auto;"/>
+						<p style="margin: auto;margin-left: -15px;">余额<span><br>0</span></p>
+						<img src="img/back_hj.png" style="height: 12px;width: 8px;margin: auto;margin-right: 5px;" />
+					</div>
+				</div>
+				<div style="width: 1px;height: 90px;background: #EEEEEE;"></div>
+				<div style="flex: 1;text-align: center;padding-top: 20px;padding-bottom: 20px;padding-left: 10px;padding-right: 10px;">
+					<div style="display: flex;height: 50px;">
+						<img src="img/icon_yinhangka.9.png"  style="width: 32px;height: 32px;margin: auto;"/>
+						<p style="margin: auto;margin-left: -15px;">银行卡<span><br>0</span></p>
+						<img src="img/back_hj.png" style="height: 12px;width: 8px;margin: auto;margin-right: 5px;" />
+					</div>
+				</div>
+			</div>
+			<div style="width: 100%;height: 1px;background: #EEEEEE;"></div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-23
+            	描述：第二行
+            -->
+            <div class="body_div" style="display: flex;height: 100%;">
+				<div style="flex: 1;text-align: center;padding-top: 20px;padding-bottom: 20px;padding-left: 10px;padding-right: 10px;">
+					<div style="display: flex;height: 50px;">
+						<img src="img/icon_mengbi2.9.png"  style="width: 32px;height: 32px;margin: auto;"/>
+						<p style="margin: auto;margin-left: -15px;">梦币<span><br>0</span></p>
+					<img src="img/back_hj.png" style="height: 12px;width: 8px;margin: auto;margin-right: 5px;" />
+					</div>
+				</div>
+				<div style="width: 1px;height: 90px;background: #EEEEEE;"></div>
+				<div style="flex: 1;text-align: center;padding-top: 20px;padding-bottom: 20px;padding-left: 10px;padding-right: 10px;">
+					<div style="display: flex;height: 50px;">
+						<img src="img/icon_youhuiquan2.9.png"  style="width: 32px;height: 32px;margin: auto;"/>
+						<p style="margin: auto;margin-left: -15px;">优惠券<span><br>0</span></p>
+						<img src="img/back_hj.png" style="height: 12px;width: 8px;margin: auto;margin-right: 5px;" />
+					</div>
+				</div>
+			</div>
+            
+		</div>
+		<script type="text/javascript">
+			$("#top_back").click(function  () {
+			window.history.go(-1);
+		});
+		</script>
+	<body>
+	</body>
+
+</html>

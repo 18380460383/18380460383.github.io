@@ -352,6 +352,7 @@ hr {
   border-top: 1px solid #eeeeee;
 }
 .sr-only {
+	
   position: absolute;
   width: 1px;
   height: 1px;
@@ -776,8 +777,7 @@ pre code {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+ 
 }
 @media (min-width: 768px) {
   .container {
@@ -3406,8 +3406,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle:focus {
   outline: 0;
 }
-.navbar-toggle .icon-bar {
-  display: block;
+.navbar-toggle  {
+ 	display: block;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+.icon-bar{
+ display: block;
   width: 22px;
   height: 2px;
   border-radius: 1px;

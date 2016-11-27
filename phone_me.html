@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<title>住梦我的</title>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/loadinganimator.css" />
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<style>
+		
+			p {
+				color: white;
+			}
+			.mid{
+				text-align: center;
+				margin:auto;
+			}
+			.mid_message{
+				color: #666666;
+			}
+			/*.body_div{
+				width: 400px;
+				margin: auto;
+			}*/
+			#bottom_img_zhuye:hover{
+			}
+			.bottom_zhuye_a{
+				width: 48px;
+				height: 48px;
+				background: url(img/guanzhu_rm.png);
+			}
+		</style>
+		<script type="text/javascript">
+		$(window).resize(function() {
+    		var width1=$(document.body).width();
+    		if(width1>=430){
+    			$("#flaot_up").css({'left':width1/2-200});
+    			$("#top_user_img").css({'left':width1/2-200});
+				$("#bottom_div").css({'left':width1/2-200});
+				$("#top_nav").css({'left':width1/2-200});
+    		}else{
+    			$("#flaot_up").css({'left':width1/2-(width1/2)});
+    			$("#top_user_img").css({'left':width1/2-(width1/2)});
+				$("#bottom_div").css({'left':width1/2-(width1/2)});
+				$("#top_nav").css({'left':width1/2-(width1/2)});
+    		}
+    			
+				if(width1>=480){
+						$("#flaot_up").show();
+				}else{
+						$("#flaot_up").hide();
+				}
+});
+			$(document).ready(function  () {
+				var width=$(document.body).width();
+				if(width>=430){
+					$("#bottom_div").css({left:width/2-200});
+					$("#top_nav").css({'left':width/2-200});
+					$("#flaot_up").css({'left':width/2-200});
+						$("#flaot_up").show();
+				}else{
+					$("#bottom_div").css({left:width/2-(width/2)});
+					$("#top_nav").css({'left':width/2-(width/2)});
+					$("#flaot_up").hide();
+				}
+				
+				$("#top_user_img").css({left:width/2-200});
+			});
+			
+		</script>
+	</head>
+<body>
+	
+
+	<div class="container" style="padding-bottom: 20px;">
+		<div id="top_nav" style=" position:fixed;height: 50px;width: 400px;margin-bottom: 50px; text-align: right ;display: none;">
+	<nav class="navbar navbar-default" role="navigation" >
+	<div class="container-fluid" style="background: lightskyblue;"> 
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#example-navbar-collapse" >
+			<span class="sr-only">切换导航</span>
+				<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#" style="color: white;">我的导航</a>
+	</div>
+	<div class="collapse navbar-collapse pull-right " id="example-navbar-collapse" >
+		<ul class="nav navbar-nav">
+			<li ><p id="scroll_top" style="color: white;margin-right: 8px;">顶部</p></li>
+			<li><p id="scroll_bottom" style="color: white;margin-right: 8px;">底部</p></li>
+			
+		</ul>
+	</div>
+	</div>
+</nav>
+</div>
+	
+		<div id="top_div" style="height: 50px;display: none;"></div>
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-22
+        	描述：底部导航布局
+        -->
+	<!--	<div id="bottom_div" class="body_div" style="height: 60px;background: white;position: fixed; bottom:0;margin: auto;display: flex;"> 
+			<div id="bottom_zhuye" class="mid" style="flex: 1; ">
+				<img id="bottom_img_zhuye" src="img/zhuye_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">首页</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_guanzhu" class="mid" style="flex: 1; ">
+				<img src="img/guanzhu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">关注</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_faxian" class="mid" style="flex: 1; ">
+				<img src="img/faxian_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">发现</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_liwu" class="mid" style="flex: 1; ">
+				<img src="img/liwu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">购物车</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_wode" class="mid" style="flex: 1;">
+				<img src="img/wodez_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">我的</p>
+			</div>
+			
+		</div>	-->
+	<div id="bottom_div" class="body_div" style="height: 72px;background: white;position: fixed; bottom:0;margin: auto;display: flex;text-align: center;"> 
+			<div id="bottom_zhuye" class="mid" style="flex: 1; ">
+				<img id="bottom_img_zhuye" src="img/zhuye_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">首页</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_guanzhu" class="mid" style="flex: 1; ">
+				<img src="img/guanzhu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">关注</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_faxian" class="mid" style="flex: 1; ">
+				<img src="img/faxian_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">发现</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_liwu" class="mid" style="flex: 1; ">
+				<img src="img/liwu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">购物车</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_wode" class="mid" style="flex: 1;">
+				<img src="img/wodez_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">我的</p>
+			</div>
+		</div>	
+		
+
+		<div id="flaot_up" style="display:flex;width:400px;height: 48px;position: fixed; bottom:50px;text-align: right;margin: auto;"> 
+			<p style="flex: 1;"></p>
+			<img id="float_img" src="img/up.png" style="width: 32px;height: 32px;" />
+		</div>
+			
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-22
+        	描述：顶部布局结束
+        	<div class="pull-right" style="background: wheat;height: 20px;width: 100px;">
+				
+			</div>
+        -->
+		
+		<!--顶部布局-->
+		<div id="top_lay" class="body_div" style="height: 100%;background: #f23023;text-align: center;">
+			<div  style="height: 20px;width: 100px;float: right;display: flex;">
+				<div class="mid" style="flex: 1; text-align: right; margin-top: 10px;">
+				<img id="shezhi" src="img/shezhi_hj.png"  style="width: 24px;height: 24px;"/>
+			</div>
+			<div id="xiaoxi" class="mid" style="flex: 1;text-align: left; margin-top: 10px;margin-right: 24px;">
+				<img src="img/xiaoxi_hj.png"  style="width: 24px;height: 24px;margin-left: 20px;"/>
+			</div>
+			</div>
+			<div>
+				<img id="top_user_img" src="img/touxiang_hj.png" style="margin-top: 20px; width: 100px;height: 100px;margin-left: 100px;" />
+			<p style="margin-top: 26px;">18380460383</p>
+			<div style="display: flex;">
+				<div style="flex: 1;"></div>
+				<div style="flex: 1;margin-bottom: 10px;">
+					
+					<img src="img/dianhua_j.png" style="width: 16px;height: 16px; "><span style="color: white;">18380460383</span></img>
+				</div>
+				<div style="flex: 1;"></div>
+				
+			</div>
+			</div>
+			
+		</div>
+		<!--全部布局结束-->
+		
+		<!--订单状态-->
+		<div class="body_div" style="height: 120px;background: white;display: flex;">
+			<div id="order_tuikuan" class="mid" style="flex: 1; ">
+				<img src="img/shouh_hjj.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 10px;">退款/售后</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="order_waitpay" class="mid" style="flex: 1; ">
+				<img src="img/daizhif_hjj.png"  style="width: 48px;height: 48px;"></img>
+				<p class="mid_message" style="margin-top: 10px;">待支付</p>
+				
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="order_waitfinsh" class="mid" style="flex: 1; ">
+				<img src="img/daiwanc_hjj.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 10px;">待完成</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="order_all" class="mid" style="flex: 1;">
+				<img src="img/quanbudid_hj.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 10px;">全部订单</p>
+			</div>
+		</div>
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-22
+        	描述：订单状态结束
+        -->
+		<div class="body_div" style="height: 4px;background: #eeeeee;">
+		</div>
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-22
+        	描述：钱包
+        -->
+		<div class="body_div" style="height: 100%;">
+			<div id="my_package" style="display: flex;text-align: center;">
+				<p style="margin-right:auto;color:#333333 ;font-size: 20px;margin-left: 5px;margin-top: 5px;margin-bottom: 5px;">我的钱包</p>
+				<img src="img/back_hj.png" style="width: 12px;height: 22px;margin: auto;margin-right: 5px;"  />
+			</div>
+			
+			<div style="width: 100%;height: 1px;background: #EEEEEE;"></div>
+			<div style="display: flex;height: 120px;">
+			<div id="yue" class="mid" style="flex: 1; ">
+				<img src="img/qianbap_hjj.png"  style="width: 36px;height: 36px;"/>
+				<p  style="color: red;margin-top: 10px;">余额</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #EEEEEE; "></div>
+				<div id="mengbi" class="mid" style="flex: 1; ">
+				<img src="img/m_hjj.png"  style="width: 36px;height: 36px;"/>
+				<p style="margin-top: 10px; color: red;">梦币</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #EEEEEE; "></div>
+				<div id="youhuiquan" class="mid" style="flex: 1; ">
+				<img src="img/youhuiq_hjj.png"  style="width: 36px;height: 36px;"/>
+				<p  style="margin-top: 10px;color: red;">优惠券</p>
+			</div>
+			</div>
+		</div>
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-22
+        	描述：钱包结束
+        -->
+		<div class="body_div" style="height: 4px;background: #eeeeee;">
+		</div>
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-22
+        	描述：推广
+        -->
+			<div class="body_div" style="height: 100%;">
+				<div class="body_div" style="height: 60px;display: flex;">
+					<div style="flex: 1; text-align: center;margin: auto;">
+						<img src="img/tuiguang_hj.png" style="width: 30px;height: 30px;"/>
+					</div>
+					<div style="flex: 9;margin: auto;">
+						<p class="mid_message" style="margin-left: 8px;">我要推广</p>
+					</div>
+				</div>
+				<div style="width: 100%;height: 1px;background: #EEEEEE; "></div>
+				<div class="body_div" style="height: 60px;display: flex;">
+					<div style="flex: 1; text-align: center;margin: auto;">
+						<img src="img/guanli_hj.png" style="width: 30px;height: 30px;"/>
+					</div>
+					<div style="flex: 9;margin: auto;">
+						<p class="mid_message" style="margin-left: 8px;">推广管理</p>
+					</div>
+				</div>
+			
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-22
+            	描述：推广结束
+            -->
+			
+				<div class="body_div" style="height: 4px;background: #eeeeee;">
+		</div>
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-22
+        	描述：我的
+        -->
+			<div class="body_div" style="height: 100%;">
+				<div class="body_div" style="height: 60px;display: flex;">
+					<div style="flex: 1; text-align: center;margin: auto;">
+						<img src="img/fabu_hj.png" style="width: 30px;height: 30px;"/>
+					</div>
+					<div style="flex: 9;margin: auto;">
+						<p class="mid_message" style="margin-left: 8px;">我的发布</p>
+					</div>
+				</div>
+				<div style="width: 100%;height: 1px;background: #EEEEEE; "></div>
+				<div class="body_div" style="height: 60px;display: flex;">
+					<div style="flex: 1; text-align: center;margin: auto;">
+						<img src="img/shoucang_hj.png" style="width: 30px;height: 30px;"/>
+					</div>
+					<div style="flex: 9;margin: auto;">
+						<p class="mid_message" style="margin-left: 8px;">我的收藏</p>
+					</div>
+				</div>
+			
+			</div>
+			
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-22
+            	描述：我的结束
+            -->
+			
+				<div class="body_div" style="height: 4px;background: #eeeeee;">
+		</div>
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-22
+        	描述：关于住梦
+        -->
+			<div id="bottom_lay" class="body_div" style="height: 100%;">
+				<div class="body_div" style="height: 60px;display: flex;">
+					<div style="flex: 1; text-align: center;margin: auto;">
+						<img src="img/guanyu_hj.png" style="width: 30px;height: 30px;"/>
+					</div>
+					<div style="flex: 9;margin: auto;">
+						<p class="mid_message" style="margin-left: 8px; ">关于住梦</p>
+					</div>
+				</div>
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-22
+            	描述：住梦结束
+            -->
+			<div class="body_div" style="height: 4px;background: #eeeeee;margin-bottom: 60px;">
+		</div>
+		
+		
+		
+				<!-- 模态框（Modal） -->
+<div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<div class="modal-body">
+				<div class="spinner">
+  			<div class="dot1"></div>
+  				<div class="dot2"></div>
+		</div>
+		<div style="text-align: center;margin-top: 20px;margin-bottom: 15px;color: red;">加载中。。。</div>
+			</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+		
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+		/*	setTimeout(function  () {
+			  $('#myModal').modal('toggle');
+			},3000);*/
+							//模态框居中的控制
+	function centerModals(){
+		$('.modal').each(function(i){
+			var $clone = $(this).clone().css('display', 'block').appendTo('body');    
+			var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+			top = top > 0 ? top : 0;
+			$clone.remove();
+			$(this).find('.modal-content').css("margin-top", top-30);
+		});
+	}
+	$('.modal').on('show.bs.modal', centerModals);		//当模态框出现的时候
+	$(window).on('resize', centerModals);				//当窗口大小变化的时候
+		
+			/*$('#myModal').modal({
+			keyboard: false,
+			   backdrop:'static'
+			});*/
+					x=0;
+			$(window).scroll(function(){
+    			if($(window).scrollTop()>200){
+    			$("#top_nav").slideDown();	
+    			}else{
+    				$("#top_nav").slideUp();
+    			}
+    		/*	x=$(window).scrollTop();*/
+			});
+			});
+	</script>
+	<script type="text/javascript">
+		$("#float_img").click(function  () {
+			$('html,body').animate({scrollTop: '0px'}, 800);
+		});
+	$("#scroll_top").click(function  () {
+			$('html,body').animate({scrollTop:$('#top_lay').offset().top}, 800);
+		});
+		$("#bottom_zhuye").click(function  () {
+			window.location.href="index.html";
+		});
+		 $("#bottom_liwu").click(function  () {
+	    	window.location.href="car.html";
+	    });
+	    $("#bottom_guanzhu").click(function  () {
+			window.location.href="guanzhu.html";
+		});
+		$("#bottom_faxian").click(function  () {
+			window.location.href="find.html";
+		});
+		$("#scroll_bottom").click(function  () {
+			$('html,body').animate({scrollTop:$('#bottom_lay').offset().top}, 800);
+		});
+		$("#order_tuikuan").click(function  () {
+			location.href = 'my_order.html'; 
+		});
+		$("#order_waitpay").click(function  () {
+			location.href = 'my_order.html'; 
+		});
+		$("#order_waitfinsh").click(function  () {
+			location.href = 'my_order.html'; 
+		});
+		$("#order_all").click(function  () {
+			location.href = 'my_order.html'; 
+		});
+		$("#my_package").click(function  () {
+			location.href = 'my_package.html'; 
+		});
+		$("#top_user_img").click(function  () {
+			location.href = 'my_information.html'; 
+		});
+		$("#shezhi").click(function  () {
+			location.href = 'my_setting.html'; 
+		});
+		$("#yue").click(function  () {
+			location.href='my_yue.html';
+		});
+		$("#mengbi").click(function  () {
+			location.href='my_mengcoin.html';
+		});
+		$("#youhuiquan").click(function  () {
+			location.href='my_youhuiquan.html';
+		});
+		$("#xiaoxi").click(function  () {
+			location.href='msg_center.html';
+		});
+		
+	</script>
+	</body>
+
+</html>

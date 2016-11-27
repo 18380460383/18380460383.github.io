@@ -1,240 +1,487 @@
 <!DOCTYPE html>
 <html>
 	<head>
-			<meta charset="UTF-8">
-			 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
-<script src="/follow.js" type="text/javascript"></script>
-</div>
-  <script type="text/javascript" src="js/ammap.js"></script>
-<script type="text/javascript" src="js/continentsLow.js"></script>
-<script type="text/javascript" src="js/worldLow.js"></script><div id="chartdiv"></div>
-
-  <script src='js/jquery-1.11.2.min.js'></script>
-
-  <script src="js/index.js"></script>
-	<script src="js/angular.js"></script>
-		<title>登录</title>
+			<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<title>主页</title>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/loadinganimator.css" />
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<!--<link rel="stylesheet" href="css/banner.css" />-->
+		<link rel="stylesheet" href="css/jquery.hiSlider.min.css" />
+		<script type="text/javascript" src="js/jquery.hiSlider.js"></script>
 		<style type="text/css">
-		.form-bg{
-			width: 60%;
-			margin: 0 auto;
-		    background: #00b4ef;
+		.pgoneng{
+			font-size: 12px;
 		}
-		.form-horizontal{
-		    background: #fff;
-		    padding-bottom: 40px;
-		    border-radius: 15px;
-		    text-align: center;
+		.pconent{
+			height: 22px;
+			font-size: 16px;
+			overflow: hidden; 
+			text-overflow:ellipsis
 		}
-		.form-horizontal .heading{
-		    display: block;
-		    font-size: 35px;
-		    font-weight: 700;
-		    padding: 35px 0;
-		    border-bottom: 1px solid #f0f0f0;
-		    margin-bottom: 30px;
+		.price{
+			height: 16px;
+			color: red;
+			font-size: 16px;
+			overflow: hidden; 
+			text-overflow:ellipsis
 		}
-		.form-horizontal .form-group{
-		    padding: 0 40px;
-		    margin: 0 0 25px 0;
-		    position: relative;
+		.navimg{
+			width: 24px;
+			height: 24px;
 		}
-		.form-horizontal .form-control{
-		    background: #f0f0f0;
-		    border: none;
-		    border-radius: 20px;
-		    box-shadow: none;
-		    padding: 0 20px 0 45px;
-		    height: 40px;
-		    transition: all 0.3s ease 0s;
+		p{
+			margin-top: 2px;
 		}
-		.form-horizontal .form-control:focus{
-		    background: #e0e0e0;
-		    box-shadow: none;
-		    outline: 0 none;
-		}
-		.form-horizontal .form-group i{
-		    position: absolute;
-		    top: 12px;
-		    left: 60px;
-		    font-size: 17px;
-		    color: #c8c8c8;
-		    transition : all 0.5s ease 0s;
-		}
-		.form-horizontal .form-control:focus + i{
-		    color: #00b4ef;
-		}
-		.form-horizontal .fa-question-circle{
-		    display: inline-block;
-		    position: absolute;
-		    top: 12px;
-		    right: 60px;
-		    font-size: 20px;
-		    color: #808080;
-		    transition: all 0.5s ease 0s;
-		}
-		.form-horizontal .fa-question-circle:hover{
-		    color: #000;
-		}
-		.form-horizontal .main-checkbox{
-		    float: left;
-		    width: 20px;
-		    height: 20px;
-		    background: #11a3fc;
-		    border-radius: 50%;
-		    position: relative;
-		    margin: 5px 0 0 5px;
-		    border: 1px solid #11a3fc;
-		}
-		.form-horizontal .main-checkbox label{
-		    width: 20px;
-		    height: 20px;
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    cursor: pointer;
-		}
-		.form-horizontal .main-checkbox label:after{
-		    content: "";
-		    width: 10px;
-		    height: 5px;
-		    position: absolute;
-		    top: 5px;
-		    left: 4px;
-		    border: 3px solid #fff;
-		    border-top: none;
-		    border-right: none;
-		    background: transparent;
-		    opacity: 0;
-		    -webkit-transform: rotate(-45deg);
-		    transform: rotate(-45deg);
-		}
-		.form-horizontal .main-checkbox input[type=checkbox]{
-		    visibility: hidden;
-		}
-		.form-horizontal .main-checkbox input[type=checkbox]:checked + label:after{
-		    opacity: 1;
-		}
-		.form-horizontal .text{
-		    float: left;
-		    margin-left: 7px;
-		    line-height: 20px;
-		    padding-top: 5px;
-		    text-transform: capitalize;
-		}
-		.form-horizontal .btn{
-		    float: right;
-		    font-size: 14px;
-		    color: #fff;
-		    background: #00b4ef;
-		    border-radius: 30px;
-		    padding: 10px 25px;
-		    border: none;
-		    text-transform: capitalize;
-		    transition: all 0.5s ease 0s;
-		    width: 30%;
-		}
-		@media only screen and (max-width: 479px){
-		    .form-horizontal .form-group{
-		        padding: 0 25px;
-		    }
-		    .form-horizontal .form-group i{
-		        left: 45px;
-		    }
-		    .form-horizontal .btn{
-		        padding: 10px 20px;
-		    }
+		*{
+		    margin: 0;
+		    padding: 0;
 		}
 		body{
-			background: url('images/bg16.jpg');
+		    font: 'Microsoft YaHei', 'Arial';
+		}
+		li{
+		    list-style: none;
+		}
+		li img{
+		    display: block;
+		    margin: 0 auto;
+		}
+		#wrap{
+		    width: 80%;
+		    min-width: 300px;
+		    margin: 10px auto 80px;
+		    background: #fefefe;
+		}
+		.hiSlider{
+		    overflow: hidden;
+		    height: 200px;
+		    background: #eee;
+		}
+		.hiSlider-item{
+		    float: left;
 		}
 	</style>
+	
 	</head>
 	<body>
-			<div class="htmleaf-container" >
-			<div style="text-align:center;clear:both;">	
-				
-		<header class="htmleaf-header">
-			<h1 style="margin: 0 auto;text-align: center;color: #FF0000;">登录界面 <span></span></h1>
-			<div style="height: 30px;"></div>
-		
-		</header>
-		
-		<div class="demo form-bg" style="padding: 20px 0;margin-top: 40px;">
-		        <div class="container">
-		            <div class="row">
-		                <div class="col-md-offset-3 col-md-6">
-		                    <form class="form-horizontal">
-		                        <span class="heading">用户登录</span>
-		                        <div class="form-group">
-		                            <input type="email" class="form-control" id="inputEmail3"  value="" placeholder="用户名或电子邮件">
-		                            <i class="fa fa-user"></i>
-		                        </div>
-		                        <div class="form-group help">
-		                            <input type="password" class="form-control" id="inputPassword3" value="" placeholder="密　码">
-		                            <i class="fa fa-lock"></i>
-		                            <a href="#" class="fa fa-question-circle"></a>
-		                        </div>
-		                        <div>
-		                        	 <label id="lable"></label>
-		                        </div>
-		                        <div class="form-group">
-		                            <div class="main-checkbox">
-		                                <input type="checkbox" value="None" id="checkbox1" name="check"/>
-		                                <label for="checkbox1"></label>
-		                            </div>
-		                            <span class="text">Remember me</span>
-		                            <button  target="_parent" type="submit" class="btn btn-default"  onclick="login()">登录</button>
-		                        </div>
-		                    </form>
-		                </div>
-		            </div>
-		        </div>
-		         </div>
-		         <div style="margin-top: 30px;"></div>
-		    	<div class="htmleaf-links" style="text-align: -webkit-center;margin: 0 auto;">
-				<a target="_parent" class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="https://18380460383.github.io/index2.html" title="返回主页" target="_blank" style="background: #00b4ef;color:white;margin-top: 30px;"><span> 返回我的首页</span></a>
+		<div class="container" style="padding-bottom: 70px;">
+			<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-22
+        	描述：底部导航布局
+        -->
+<!--		<div id="bottom_div" class="body_div" style="height: 60px;background: white;position: fixed; bottom:0;margin: auto;display: flex;text-align: center;"> 
+			<div id="bottom_zhuye" class="mid" style="flex: 1; ">
+				<img id="bottom_img_zhuye" src="img/zhuyez_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">首页</p>
 			</div>
-		    </div>
-		   
-		    <script src="scripts/jquery-1.11.2.min.js"></script> 
-		<script src="scripts/bootstrap.min.js"></script> 
-		<script type="text/javascript">
-			function login(){
-				$("#lable").html("");
-				var acount=$("#inputEmail3").val();
-				var pass=$("#inputPassword3").val();
-				//alert("账号："+acount+"密码："+pass);
-				 $.ajax({
-            type : "get",
-            async:false,
-             url:"http://127.0.0.1:3000",
-           data: { 
-           
-           acount: acount,
-           name:pass},
-            dataType : "jsonp",
-            //jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
-            jsonpCallback:"callback",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
-            success : function(json){
-            	$("#lable").html(json.data);
-            	//alert(JSON.stringify(json));
-            	//$("#inputEmail3").attr("value",JSON.stringify(json));
-            	 if (json.faile==1) {//根据返回值进行跳转
-                 // window.location.href = 'https://18380460383.github.io/index2.html';
-         		  //alert("跳转");
-         		  //
-        		}
-            },
-            error:function(){
-                alert('fail');
-            }
-        });
-			}
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_guanzhu" class="mid" style="flex: 1; ">
+				<img src="img/guanzhu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">关注</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_faxian" class="mid" style="flex: 1; ">
+				<img src="img/faxian_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">发现</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_liwu" class="mid" style="flex: 1; ">
+				<img src="img/liwu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">购物车</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_wode" class="mid" style="flex: 1;">
+				<img src="img/wode_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">我的</p>
+			</div>
+		</div>	-->
+					<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：底部布局
+            -->
+		<div id="bottom_div" class="body_div" style="height: 60px;background: white;position: fixed; bottom:0;margin: auto;display: flex;text-align: center;"> 
+			<div id="bottom_zhuye" class="mid" style="flex: 1; ">
+				<img id="bottom_img_zhuye" src="img/zhuyez_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">首页</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_guanzhu" class="mid" style="flex: 1; ">
+				<img src="img/guanzhu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">关注</p>
+			</div>
+			<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_faxian" class="mid" style="flex: 1; ">
+				<img src="img/faxian_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">发现</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_liwu" class="mid" style="flex: 1; ">
+				<img src="img/liwu_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">购物车</p>
+			</div>
+				<div style="width: 1px;height: 100%;background: #999999; display: none;"></div>
+			<div id="bottom_wode" class="mid" style="flex: 1;">
+				<img src="img/wode_rm.png"  style="width: 48px;height: 48px;"/>
+				<p class="mid_message" style="margin-top: 5px; display: none;">我的</p>
+			</div>
+		</div>	
+			<!--底部布局结束-->
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：顶部布局
+                -->	
+			<!--底部布局结束-->
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：顶部布局
+                -->	
+                
+			<div id="top_lay" class="body_div" style="position: fixed;display: flex;height: 50px;background: red;margin: auto;text-align: center;z-index: 999;">
+				<div style="margin: auto;text-align: center;margin-left: 8px;margin-top: 4px;margin-right: 4px;">
+					<img src="img/saomafu_rm.png" style="width: 18px;height: 18px;margin-top: 4px;"/>
+					<p style="color: white;">扫描付</p>
+				</div>
+				<div style="display: flex; flex: 1; margin: auto;text-align: center;margin-right: 2px;margin-top: 4px;margin-bottom: 4px;background: #ee0000;border-radius: 5px;margin-left: 4px;margin-right: 4px;"> 
+					  <img src="img/sousuo_zxq.png" style="width: 24px;height: 24px;margin: auto;margin-left: 8px;" />
+					  <input type="text" class="form-control" placeholder="请输入酒店/美食的关键字" aria-label="Amount (to the nearest dollar)" style="margin: auto;text-align: left;margin-left: 6px; height: 100%;background:#ee0000;color: white;border: 0;">
+				</div>
+				<div id="top_message" style="margin: auto;text-align: center;margin-right: 8px;margin-left: 6px;margin-top: 4px;">
+					<img  src="img/xiaoxi_rm.png" style="width: 18px;height: 18px;margin-top: 4px;"/>
+					<p style="color: white;">消息</p>
+				</div>
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：顶部布局结束
+            -->
+            <div style="height: 50px;background: white;"></div>
+            <!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：banner条
+            -->
+            <div class="body_div" style="height: 200px;background: #999999;margin: auto;">
+           <ul class=" hiSlider hiSlider3">
+		        <li class="hiSlider-item"><img src="img/1.jpg" alt="11111"></li>
+		        <li class="hiSlider-item"><img src="img/2.jpg" alt="22222"></li>
+		        <li class="hiSlider-item"><img src="img/3.jpg" alt="33333"></li>
+		        <li class="hiSlider-item"><img src="img/3.jpg" alt="44444"></li>
+		        <li class="hiSlider-item"><img src="img/2.jpg" alt="55555"></li>
+		    </ul>
+            </div>
+             <!--banner结束-->
+             <!--
+             	作者：18380460383@126.com
+             	时间：2016-11-24
+             	描述：功能条
+             -->
+			<div class="body_div" style="padding-top:10px;padding-bottom: 10px; height: 120px;">
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：第一层导航
+                -->
+				<div class="body_div" style="display: flex;">
+					<div style="flex: 1;text-align: center;">
+						<img src="img/leyi_hj.png" class="navimg"/>
+						<p class="pgoneng">圆梦中心</p>
+					</div>
+					<div style="flex: 1;text-align: center;">
+						<img src="img/meishi_hj.png" class="navimg"/>
+						<p class="pgoneng">美食</p>
+					</div>
+					<div style="flex: 1;text-align: center;">
+						<img src="img/jiaofei_hj.png" class="navimg"/>
+						<p class="pgoneng">充值缴费</p>
+					</div>
+					<div style="flex: 1;text-align: center;">
+						<img src="img/fuwu_hj.png" class="navimg"/>
+						<p class="pgoneng">生活服务</p>
+					</div>
+					<div style="flex: 1;text-align: center;">
+						<img src="img/yule_hj.png" class="navimg"/>
+						<p class="pgoneng">休闲娱乐</p>
+					</div>
+				</div>
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：第二层导航
+                -->
+				<div class="body_div" style="display: flex;">
+					<div style="flex: 1;text-align: center;">
+						<img src="img/shangcheng_hj.png" class="navimg"/>
+						<p class="pgoneng">商场</p>
+					</div>
+					<div style="flex: 1;text-align: center;">
+						<img src="img/jiudian_hj.png" class="navimg"/>
+						<p class="pgoneng">酒店</p>
+					</div>
+					<div style="flex: 1;text-align: center;">
+						<img src="img/maipiao_hj.png" class="navimg"/>
+						<p class="pgoneng">票务</p>
+					</div>
+					<div style="flex: 1;text-align: center;">
+						<img src="img/dache_hj.png" class="navimg"/>
+						<p class="pgoneng">出行</p>
+					</div>
+					<div style="flex: 1;text-align: center;">
+						<img src="img/liren.png" class="navimg"/>
+						<p class="pgoneng">丽人</p>
+					</div>
+				</div>
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：功能条结束
+           -->
+           <div class="body_div" style="height: 1px;background: #EEEEEE;"></div>
+           <!--
+           	作者：18380460383@126.com
+           	时间：2016-11-24
+           	描述：住梦快报
+           -->
+			<div class="body_div" style="display: flex;height: 50px;margin-top: 4px;">
+				<div style="width: 10%;">
+					<p></p>
+				<img src="img/kuaibao_rm.png" style="text-align: center; margin: auto;margin-top: 2px; width: 100%;height: auto;margin-left: 8px;" />
+				</div>
+				<div style="width: 1px;height: 50px;background: #EEEEEE;margin-left: 3%;"></div>
+				<div style="display: flex; width: 89%;text-align: center;">
+					<img src="img/kuaibaolb_rm.png" style="text-align: center;margin: auto; margin-left: 8px; width: 8%;height: auto;" />
+					<!--<p style="margin: auto;margin-left: 8px;">快报1</p>-->
+					<div style="height: 50px;background: white;width: 90%;">
+			<ul class="hiSlider hiSlider1" style="width:100%;height: 40px;background: white;text-align: left;margin-top: 10px;margin-left: 8px;">
+		        <li data-title="11111" class="hiSlider-item"><p>完美人生</p></li>
+		        <li data-title="22222" class="hiSlider-item"><p>超品想死</p></li>
+		        <li data-title="33333" class="hiSlider-item"><p>从岛主到国王</p></li>
+		        <li data-title="44444" class="hiSlider-item"><p>我真是大明星</p></li>
+		        <li data-title="55555" class="hiSlider-item"><p>科技之门</p></li>
+		    </ul>
+					</div>
+				</div>
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：快报结束
+            -->
+            <div class="body_div" style="height: 8px;background: #EEEEEE;"></div>
 			
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：图片展示
+            -->
+			<div class="body_div" style="display: flex;height: 150px;background: #EEEEEE;">
+				<div style="flex: 2;">
+					<img src="img/dtcxbg_rm.png" style="width: 100%;height: 150px;" />
+				</div>
+				<div style="width: 1px;height: 150px;background: #EEEEEE;"></div>
+				<div style="flex: 3;height: 150px;">
+					<div>
+						<img src="img/jfhbt_rm.png" style="width: 100%;height: 75px;" />	
+					</div>
+					<div style="width: 100%;height: 1px;background: #EEEEEE;"></div>
+					<div style="display: flex;">
+						<div style="flex: 1;">
+							<img src="img/jdrnt_rm.png" style="width: 100%;height: 75px;" />
+						</div>
+						<div style="width: 1px;height: 75px;background: #EEEEEE;"></div>
+						<div style="flex: 1;">
+							<img src="img/jdrnt_rm.png" style="width: 100%;height: 75px;" />
+						</div>	
+					</div>
+				</div>
+			</div>
+			<!--
+            	作者：18380460383@126.com
+            	时间：2016-11-24
+            	描述：图片展示结束
+            -->
+              <div class="body_div" style="height: 8px;background: #EEEEEE;"></div>
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：中秋图片展示
+                -->
+				<div class="body_div" style="height: 150px;">
+					 <img src="img/zhongqiu.png" class="body_div" style="height: 150px;margin: auto;text-align: center;" />
+				</div>
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：底部商品展示
+                -->
+				<div class="body_div" style="height: 190px;display: flex;padding: 10px;">
+					<div id="junzi" style="flex: 1;text-align: center;margin: auto;">
+						<img src="img/junzi.png" style="height: 100px;"/>
+						<p class="pconent">君子泉小萍果酒-52度一件装</p>
+						<p class="price">￥ 240.00</p>
+					</div>
+					<div id="youwei" style="flex: 1;text-align: center;margin: auto;">
+						<img src="img/youwei.jpg" style="height: 100px;"/>
+						<p class="pconent">有味青年花生米花酥原味180g</p>
+						<p class="price">￥ 0.00</p>
+					</div>
+					<div id="daoshi" style="flex: 1;text-align: center;margin: auto;padding-bottom: 2px;">
+						<img src="img/daoshi.jpg" style="height: 100px;"/>
+						<p class="pconent">导师洗剪吹</p>
+						<p class="price">￥ 50.00</p>
+					</div>
+				</div>
+				<!--
+                	作者：18380460383@126.com
+                	时间：2016-11-24
+                	描述：底部商品结束
+                -->
+                
+				   <div class="body_div" style="height: 8px;background: #EEEEEE;"></div>
+           
+		</div>
+		<!--
+        	作者：18380460383@126.com
+        	时间：2016-11-24
+        	描述：控制底部布局居中
+        -->
+				<script type="text/javascript">
+/*			$(window).resize(function() {
+				var width1 = $(document.body).width();
+				if(width1>=430){
+					$("#bottom_div").css({
+					'left': width1 / 2 - 200
+				});
+				$("#top_lay").css({
+					'left': width1 / 2 - 200
+				});
+				}else{
+					$("#bottom_div").css({
+					'left': width1 / 2 - (width1/2)
+				});
+				$("#top_lay").css({
+					'left': width1 / 2 - (width1/2)
+				});
+				}
+			});
+			$(document).ready(function() {
+				var width = $(document.body).width();
+				if(width>=430){
+					$("#bottom_div").css({
+					left: width / 2 - 200
+				});
+				$("#top_lay").css({
+					left: width / 2 - 200
+				});
+				}
+				else{
+					$("#bottom_div").css({
+					left: width / 2-(width/2)
+				});
+				$("#top_lay").css({
+					left: width / 2-(width/2)
+				});
+				}
+			});*/
+			$(document).ready(function() {
+				var width = $(document.body).width();
+				if(width>=450){
+					$("#bottom_div").css({
+					left: width / 2 - 200
+				});
+				$("#top_lay").css({
+					left: width / 2 - 200
+				});
+				}
+				else{
+					$("#bottom_div").css({
+					left: width / 2-(width/2)
+				});
+				$("#top_lay").css({
+					left: width / 2-(width/2)
+				});
+				}
+			});
+			$(window).resize(function() {
+				var width1 = $(document.body).width();
+				if(width1>=430){
+					$("#bottom_div").css({
+					'left': width1 / 2 - 200
+				});
+				$("#top_lay").css({
+					'left': width1 / 2 - 200
+				});
+				}else{
+					$("#bottom_div").css({
+					'left': width1 / 2 - (width1/2)
+				});
+				$("#top_lay").css({
+					'left': width1 / 2 - (width1/2)
+				});
+				}
+			});
+
+
+			$('.hiSlider1').hiSlider({
+				direction:top,
+				isShowPage:false,
+		 	isShowTitle:false,
+		 	intervalTime:5000,
+		 	isShowControls:false,
+	        isFlexible: true,
+	        isSupportTouch: false,
+	        titleAttr: function(curIdx){
+	            return $('img', this).attr('alt');
+	        }
+	    });
+		 $('.hiSlider3').hiSlider({
+		 	isShowTitle:false,
+		 	intervalTime:5000,
+		 	isShowControls:true,
+	        isFlexible: true,
+	        isSupportTouch: true,
+	        titleAttr: function(curIdx){
+	            return $('img', this).attr('alt');
+	        }
+	    });
+	    $("#bottom_wode").click(function  () {
+	    	window.location.href="phone_me.html";
+	    });
+	     $("#bottom_liwu").click(function  () {
+	    	window.location.href="car.html";
+	    });
+	    $("#bottom_guanzhu").click(function  () {
+			window.location.href="guanzhu.html";
+		});
+		$("#bottom_faxian").click(function  () {
+			window.location.href="find.html";
+		});
+		$("#top_message").click(function  () {
+			window.location.href="msg_center.html";
+		});
+		$("#junzi").click(function  () {
+			window.location.href="introduction.html";
+		});
+		$("#youwei").click(function  () {
+			window.location.href="introduction.html";
+		});
+		$("#daoshi").click(function  () {
+			window.location.href="introduction.html";
+		});
 		</script>
+		
 	</body>
 </html>

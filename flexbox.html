@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<title>弹性盒子测试</title>
+			<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+<style>
+	
+			.contaier {
+				width: 100%;
+				height: 200px;
+				background: cadetblue;
+				display: flex;
+				  -webkit-flex-wrap: wrap;
+    			flex-wrap: wrap;
+			}
+			
+			.left {
+				margin: auto;
+				flex: 1;
+				text-align: center;
+			}
+			
+			.right {
+				height: 100%;
+				font-size: 40px;
+				color: red;
+				margin: auto;
+				text-align: center;
+				flex: 1;
+			}
+			
+			.flex-item {
+				text-align: center;
+				background-color: cornflowerblue;
+				width: 60px;
+				min-height: 100px;
+				margin: 10px;
+			}
+			
+			.item1 {
+				-webkit-align-self: flex-start;
+				align-self: flex-start;
+			}
+			
+			.item2 {
+				-webkit-align-self: flex-end;
+				align-self: flex-end;
+			}
+			
+			.item3 {
+				-webkit-align-self: center;
+				align-self: center;
+			}
+			
+			.item4 {
+				-webkit-align-self: baseline;
+				align-self: baseline;
+			}
+			
+			.item5 {
+				-webkit-align-self: stretch;
+				align-self: stretch;
+			}
+			
+			.flex-container {
+				display: -webkit-flex;
+				display: flex;
+				width: 100%;
+				height: 250px;
+				background-color: lightgrey;
+			}
+			
+			.flex-item {
+				background-color: cornflowerblue;
+				width: 75px;
+				height: 75px;
+				margin: 10px;
+			}
+			
+			.flex-item:first-child {
+				/*margin-right: auto;/*将右边的空间分配给3*/
+				/*margin-left: auto;*//*空出左边区域*/
+				/*margin-top: auto;*//*空出下边区域*/
+				
+			}
+			.flex-item:last-child{
+				margin-left: auto;
+			}
+			
+			.flex-align_self{
+				margin-top: 20px;
+				display: -webkit-flex;
+				display: flex;
+				width: 100%;
+				height: 250px;
+				background-color: lightgrey;
+			}
+			.flex-item1{
+				/*margin-right: auto;/*将右边的空间分配给3*/
+				/*margin-left: auto;*//*空出左边区域*/
+				/*margin-top: auto;*//*空出下边区域*/
+				background-color: cornflowerblue;
+				width: 75px;
+				height: 75px;
+				margin: 10px;
+			}
+		
+			.flex-item2{
+				margin-left: auto;
+				background-color: cornflowerblue;
+				width: 75px;
+				height: 75px;
+			}
+			.li{
+				margin-bottom: 10px;
+			}
+				.top_float{
+					margin-top: 50px;
+					margin-left: 80%;
+				float: right;
+				position: fixed;
+			}
+			.flex-container2 {
+				float:right;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    flex-direction:column;
+    height: 250px;
+	position:flex;
+	
+}
+
+.flex-item2 {
+	text-align: center;
+	color: white;
+	opacity: 0.5;
+	z-index: -1;
+    background-color: darkmagenta;
+    height: auto;
+    margin: 10px;
+}
+.flex-item2:hover{
+	opacity: 1.0;
+	 background-color: red;
+}
+		</style>
+	</head>
+
+	<body>
+		<div class="top_float">
+			<div class="flex-container2" >
+  <div class="flex-item2">1</div>
+  <div class="flex-item2">2</div>
+  <div class="flex-item2">3</div>  
+		</div>
+		
+</div>
+		<div id="div1" style=" position:fixed;height: 50px;width: 100%;background: darkgoldenrod;margin-bottom: 50px; text-align: right ;">
+			<!--<ul class="list-inline" style="margin-top: 10px;">
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+	<li>Item 4</li>
+</ul>-->
+<nav class="navbar navbar-default" role="navigation" >
+	<div class="container-fluid"> 
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#example-navbar-collapse" >
+			
+			<div class="icon-bar"></div>
+			<div class="icon-bar"></div>
+			<div class="icon-bar"></div>
+			<!--<span class="sr-only">切换导航</span>
+				<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>-->
+		</button>
+		<a class="navbar-brand" href="#">菜鸟教程</a>
+	</div>
+	<div class="collapse navbar-collapse pull-right " id="example-navbar-collapse" >
+		<ul class="nav navbar-nav">
+			<li ><a href="#">iOS</a></li>
+			<li><a href="#">SVN</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					Java <b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">jmeter</a></li>
+					<li><a href="#">EJB</a></li>
+					<li><a href="#">Jasper Report</a></li>
+					<li class="divider"></li>
+					<li><a href="#">分离的链接</a></li>
+					<li class="divider"></li>
+					<li><a href="#">另一个分离的链接</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	</div>
+</nav>
+
+		</div>
+		<!--<div style="width:100%;position:fixed;display:flex;height:100%;">
+			<div style="margin-right: auto;"></div>
+			<ul style="   display: -webkit-flex;display: flex;height:100%;border: 1px solid red;list-style-type :none;padding-right: 10px;	 flex-direction:column;" >
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>-->
+		<div style="height: 50px;"></div>
+		<div class="contaier" >
+			<div class="left">
+				left
+			</div>
+			<div class="right">
+				right
+			</div>
+		</div>
+		
+		<h3>align-self的各属性介绍</h3>
+		<div style="width: 100%;height: 250px;background: yellowgreen;display: flex;  ">
+			<div class="flex-item item1">flex-start</div>
+			<div class="flex-item item2">flex-end</div>
+			<div class="flex-item item3">center</div>
+			<div class="flex-item item4">baseline</div>
+			<div class="flex-item item5">stretch</div>
+		</div>
+		<h3>用于测试各种margin_left(right,top):auto的情况</h3>
+		<div class="flex-container">
+			<div class="flex-item">flex item 1</div>
+			<div class="flex-item">flex item 3</div>
+		</div>
+		<div class="flex-align_self">
+			<div class="flex-item1">flex item 1</div>
+			<div class="flex-item2">flex item 3</div>
+		</div>
+		<div class="pull-left">
+	向左快速浮动
+</div>
+<div class="pull-right">
+	向右快速浮动
+</div>
+		<button  id="showmodel" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">弹出bootstrap的模态框</button>
+		<div class="row" style="width: 100%;">
+			<div class="col-sm-6 col-xs-6 col-md-offset-6" style="background: gainsboro;">
+				<p>这是div的内容区域作为测试的</p>
+			</div>
+		</div>
+		<button type="button" class="btn btn-default navbar-btn">
+            导航栏按钮
+        </button>
+        	
+		<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" 
+						aria-hidden="true">×
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div class="modal-body">
+				按下 ESC 按钮退出。
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" 
+						data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary">
+					提交更改
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+		<div id="div" style="width: 100px;height: 20px;"></div>
+		<script type="text/javascript">
+				$(document).ready(function(){
+					x=0;
+			$(window).scroll(function(){
+				
+    			/*if($(window).scrollTop()>100){
+    			/*	alert("120");*/
+    			  /* $("#div").animate({left:'250px'});} */ 
+    			
+    			//alert("120");
+    			if($(window).scrollTop()>x){
+    			$("#div1").slideUp();	
+    			}else{
+    				$("#div1").slideDown();
+    			}
+    			x=$(window).scrollTop();
+			});
+  			 
+			/*$("#showmodel").click(function  () {
+				$(function () { $('#myModal').modal({
+			keyboard: true
+			})});	
+			});*/
+			}
+				);
+				//模态框居中的控制
+	function centerModals(){
+		$('.modal').each(function(i){
+			var $clone = $(this).clone().css('display', 'block').appendTo('body');    
+			var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+			top = top > 0 ? top : 0;
+			$clone.remove();
+			$(this).find('.modal-content').css("margin-top", top-30);
+		});
+	}
+	$('.modal').on('show.bs.modal', centerModals);		//当模态框出现的时候
+	$(window).on('resize', centerModals);				//当窗口大小变化的时候
+		
+		</script>
+	</body>
+
+</html>

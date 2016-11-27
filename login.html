@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<link rel="stylesheet" href="css/switch.css" />
+		<link rel="stylesheet" href="css/switch_animator.css" />
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div class="body_div" style="background: #EEEEEE;height: 100%;">
+			<div class="top_title body_div" style="display: flex;">
+				<img id="top_back" class="top_back" src="img/icoon_back.png" />
+				<p class="top_title_message" style="flex: 1;">登录</p>
+				<p style="color: red;text-align: center;font-size: 18px;margin: auto;display: none;">余额明细</p>
+			</div>
+			<div style="height: 50px;"></div>
+			<div style="width: 100%;height: 1px;background: #EEEEEE;"></div>
+			<div class="body_div" style="text-align: center;background: white;padding-top: 5px;">
+				<div class="body_div">
+					<div style="display: flex; padding: 10px;">
+						<img src="img/iconfont_shouji.png" style="margin: auto; height: 19px;width: 15px;"/>
+						 <input id="acount" type="text" class="form-control" placeholder="请输入账号" aria-label="Amount (to the nearest dollar)" style="margin: auto;text-align: left;margin-left: 6px; height: 100%;border: 1 white;">
+						<img id="delete" src="img/icon_shanchu.9.png" style="height: 18px;width: 18px;margin: auto;margin-left: 2px;" />
+					</div>
+				</div>
+				<div class="body_div" style="height: 1px;background: #EEEEEE;"></div>
+								<div class="body_div">
+					<div style="display: flex; padding: 10px;">
+						<img src="img/icon_mima.png" style="margin: auto; height: 18px;widows: 18px;" />
+						 <input id="password" type="text" class="form-control" placeholder="请输入密码" aria-label="Amount (to the nearest dollar)" style="margin: auto;text-align: left;margin-left: 6px; height: 100%;border: 1 white;margin-right: 18px;">
+					</div>
+				</div>
+				<div class="body_div" style="height: 1px;background: #EEEEEE;"></div>
+				<button type="button" class="btn btn-default" style="width: 90%;margin-top: 30px;background: red;color: white;font-size: 16px;">登录</button>
+				<div style="display: flex;margin-left: 15px;margin-right: 15px;margin-top: 15px;">
+					<p style="flex:1;text-align: left;margin-left: 5px;">没有账号，去<a href="#" style="color: blue;">注册</a></p>
+					<a href="#" style="margin-right: 5px;">忘记密码</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			
+			$("#top_back").click(function  () {
+				window.history.go(-1);
+			});
+			$("#delete").click(function  () {
+				$("#acount").val("");
+			});
+		</script>
+	</body>
+</html>

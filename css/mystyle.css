@@ -1,0 +1,56 @@
+.body_div{
+				width: 100%;
+				margin: auto;
+			}
+.top_title{
+	display: flex;
+	height: 50px;
+	position: fixed;
+	padding: 10px;
+	background: white;
+}
+.top_back{
+	width: 18px;
+	height: 32px;
+}
+.top_title_message{
+	color: red;
+	font-size: 20px;
+	text-align: center;
+	margin: auto;
+}
+.body_p_mess{
+	color:#000000;
+	font-size: 18px;
+}
+.next_img{
+	margin: auto;
+	margin-right: 8px;
+	width: 8px;
+	height: 12px;
+}
+.red_point{
+	margin-top: -8px;
+	padding-top:-1px; 
+	margin-left: -15px;
+	margin-right: 15px;
+	background: red;
+	height: 16px;width: 16px;
+	border-radius: 8px;
+	background: red;
+	text-align: center;
+	font: 3px;
+	color: white;
+}
+
+@media (min-width: 450px) {
+/*  .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }*/
+	.body_div{
+				width: 400px;
+				margin: auto;
+	}
+}
+
